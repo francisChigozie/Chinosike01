@@ -1,0 +1,19 @@
+{
+  "name": "iucampus",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francisChigozie/Chinosike01.git"
+  },
+  "author": "Francis Chigozie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francisChigozie/Chinosike01/issues"
+  },
+  "homepage": "https://github.com/francisChigozie/Chinosike01#readme"
+}
