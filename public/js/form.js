@@ -99,21 +99,23 @@ function completeValidate() {
 
 async function sendFormData(){
                     // send data message
-                    var data = new FormData(form)
+                    const data = new FormData(form)
 
-                  await fetch("/contact", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        user: data.get('user'),
-                        subject: data.get('subject'),
-                        email: data.get('email'),
-                        phone: data.get('phone'),
-                        text: data.get('text'),
-                    })
-                })
+                    const options = {
+                            method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            user: data.get('user'),
+                            subject: data.get('subject'),
+                            email: data.get('email'),
+                            phone: data.get('phone'),
+                            text: data.get('text'),
+                        })
+                    }
+
+                    await fetch("/contact", options)
                     .then((response) => {
                         response.json()
                         console.log(response)
@@ -131,8 +133,28 @@ async function sendFormData(){
                     .catch((err) => {
                         console.error(err.message)
                     })
-     
+
 }
+
+                    /* .then((response) => {
+                        response.json()
+                        console.log(response)
+                    }) 
+                    .then((data) => {
+                        console.log(data)
+                         
+                     var successMsg = document.getElementById('result').innerHTML = 
+                        'Your message is sent and I will write you soon';
+
+                    setInterval(() => {
+                        window.location = '/contact';
+                    }, 20000)
+                    })
+                    .catch((err) => {
+                        console.error(err.message)
+                    })
+     
+} */
 
 /**
  *function getFormData() {
